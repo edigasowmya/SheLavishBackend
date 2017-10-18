@@ -1,0 +1,13 @@
+com\niit\model\User.class
+com\niit\model\Product.class
+com\niit\model\Supplier.class
+com\niit\DAO\UserDAO.class
+com\niit\DaoIMPL\CategoryDaoImpl.class
+com\niit\DAO\ProductDao.class
+com\niit\DaoIMPL\ProductDaoImpl.class
+com\niit\DAO\CategoryDao.class
+com\niit\model\Category.class
+com\niit\DaoIMPL\UserDaoImpl.class
+com\niit\DAO\SupplierDao.class
+com\niit\DaoIMPL\SupplierDaoImpl.class
+com\niit\config\DBConfig.class
