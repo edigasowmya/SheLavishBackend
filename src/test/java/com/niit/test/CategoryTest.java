@@ -82,7 +82,7 @@ public class CategoryTest
 		}
 	}
 	
-	
+	@Ignore
 	@Test
 	public void getCategoryTest()
 	{
