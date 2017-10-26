@@ -1,98 +1,82 @@
-package com.niit.test;
-
+/*package com.niit.test;
 
 import static org.junit.Assert.*;
 
 import java.util.List;
 
-//import org.hibernate.SessionFactory;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.niit.DAO.SupplierDao;
+import com.niit.dao.SupplierDao;
+import com.niit.model.Supplier;
 import com.niit.model.Supplier;
 
 @Ignore
 public class SupplierTest
 {
-	static SupplierDao supplierDAO;
-	
+	private static SupplierDao supplierDao;
 	@BeforeClass
 	public static void initialize()
 	{
-		AnnotationConfigApplicationContext configApplnContext=new AnnotationConfigApplicationContext();
-		configApplnContext.scan("com.niit");
-		configApplnContext.refresh();
+		@SuppressWarnings("resource")
+		AnnotationConfigApplicationContext ConfigApplnContext=new AnnotationConfigApplicationContext();
+		ConfigApplnContext.scan("com.niit");
+		ConfigApplnContext.refresh();
 		
-		//SessionFactory sessionFactory=(SessionFactory)configApplnContext.getBean("DBConfig.class");
-		
-		supplierDAO=(SupplierDao)configApplnContext.getBean("supplierDao");
+		supplierDao=(SupplierDao)ConfigApplnContext.getBean("SupplierDao");
 	}
-	
-	@Ignore	
-	@Test
-	public void addSupplierTest()
-	{
-		Supplier supplier=new Supplier();
-    	supplier.setSupId(1002);
-		supplier.setSupName("Mobile");
-		supplier.setSupDesc("Mobile and its accesories");
-		System.out.println("Start saving supplier");
-		assertTrue(supplierDAO.addSupplier(supplier));
-	}
-	
-	
-	@Test
-	public void updateSupplierTest()
-	{
-		Supplier supplier =new Supplier();
-		supplier.setSupId(1002);
-		supplier.setSupName("JMShirt");
-		supplier.setSupDesc("John Miller Shirt with New Designs");
-		
-		assertTrue(supplierDAO.updateSupplier(supplier));
-				}
-	
+	@Ignore
+	  @Test
+	    public void addSupplierTest()
+	    {
+	        Supplier supplier=new Supplier();
+	        supplier.setSupplierId(1001);
+	        supplier.setSupplierName("Desktop");
+	        supplier.setSupplierAddress("all kinds of desktops ");
+	         
+	        assertTrue(supplierDao.addSupplier(supplier));
+	    }
+	     
+	    @Ignore
+	    @Test
+	    public void updateSupplierTest()
+	    {
+	        Supplier supplier=new Supplier();
+	        supplier.setSupplierId(1001);
+	        supplier.setSupplierName("JMShirt");
+	        supplier.setSupplierAddress("John Miller Shirt with Best Price");
+	         
+	        assertTrue(supplierDao.updateSupplier(supplier));
+	    }
+	   @Ignore
+	    @Test
+	    public void deleteSupplierTest()
+	    {
+	        Supplier supplier=new Supplier();
+	        supplier.setSupplierId(1001);
+	        assertTrue(supplierDao.deleteSupplier(supplier));
+	    }
+	   
+	  
 	@Ignore
 	@Test
-	public void deleteSupplierTest()
+	public void retrivesupplierTest()
 	{
-		Supplier supplier=new Supplier();
-		supplier.setSupId(1005);
-		assertTrue(supplierDAO.deleteSupplier(supplier));
-
+		List <Supplier> listsupplier=supplierDao.retrieveSupplier();
+		assertNotNull("problem in retriving",listsupplier);
+		this.show(listsupplier);	
 	}
 	
-	
-	@Test
-	public void retrieveSupplierTest()
+	public void show(List<Supplier> listsupplier)
 	{
-		List<Supplier> listSupplier=supplierDAO.retrieveSupplier();
-		assertNotNull("Problem in Retriving ",listSupplier);
-		this.show(listSupplier);
-	}
-	
-	public void show(List<Supplier> listSupplier)
-	{
-		for(Supplier supplier:listSupplier)
+		for(Supplier supplier:listsupplier)
 		{
-			System.out.println("Supplier ID:"+supplier.getSupId());
-			System.out.println("Supplier Name:"+supplier.getSupName());
+	System.out.println("supplier iD:"+supplier.getSupplierId());
+	System.out.println("supplier name:"+supplier.getSupplierName());
 		}
-	}
 	
-	@Ignore
-	@Test
-	public void getSupplierTest()
-	{
-		Supplier supplier=supplierDAO.getSupplier(1003);
-		assertNotNull("Problem in Getting:",supplier);
-		System.out.println("Supplier ID:"+supplier.getSupId());
-		System.out.println("Supplier Name:"+supplier.getSupName());
-	}
-
 }
-
-
+}
+*/

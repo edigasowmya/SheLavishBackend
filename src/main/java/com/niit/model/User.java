@@ -1,38 +1,96 @@
 package com.niit.model;
+import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+
+
+
+
 
 @Entity
-@Table
-public class User
+public class User implements  Serializable
 {
-	@Id
-	int useId;
+	public User()
+	{}
 	
-	String useName,useDesc;
-
-	public int getUseId() {
-		return useId;
+	private static final long serialVersionUID = -5294671367987983736L;
+	@Id
+	@GeneratedValue
+	private int id;
+	private String username;
+	private String email;
+	private String password;
+	private String contact;
+	private String address;
+	private String role;
+	private boolean enabled;
+	
+	public int getId()
+	{
+		return id;
 	}
-
-	public void setUseId(int useId) {
-		this.useId = useId;
+	public void setId(int id)
+	{
+		this.id = id;
 	}
-
-	public String getUseName() {
-		return useName;
+	public String getUsername() 
+	{
+		return username;
 	}
-
-	public void setUseName(String useName) {
-		this.useName = useName;
+	public void setUsername(String username)
+	{
+		this.username = username;
 	}
-
-	public String getUseDesc() {
-		return useDesc;
+	public String getEmail() 
+	{
+		return email;
 	}
+	public void setEmail(String email)
+	{
+		this.email = email;
 
-	public void setUseDesc(String useDesc) {
-		this.useDesc = useDesc;
+	}
+	public String getPassword() 
+	{
+		return password;
+	}
+	public void setPassword(String password) 
+	{
+		this.password = password;
+	}
+	public String getContact() 
+	{
+		return contact;
+	}
+	public void setContact(String contact) 
+	{
+		this.contact = contact;
+	}
+	public String getAddress() 
+	{
+		return address;
+	}
+	public void setAddress(String address)
+	{
+		this.address = address;
+	}
+	public String getRole() 
+	{
+		return role;
+	}
+	public void setRole(String role) 
+	{
+		this.role = role;
+	}
+	public boolean isEnabled()
+	{
+		return enabled;
+		
+	}
+	public void setEnabled(boolean enabled) 
+	{
+		this.enabled = enabled;
 	}
 	
 	

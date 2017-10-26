@@ -1,5 +1,2 @@
-com\niit\test\UserTest.class
-com\niit\test\CategoryTest.class
-com\niit\test\SupplierTest.class
-niit\SheLavishBackend\AppTest.class
+com\niit\test\AppTest.class
 com\niit\test\ProductTest.class

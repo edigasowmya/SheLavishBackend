@@ -1,39 +1,53 @@
 package com.niit.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 @Entity
-@Table
-public class Supplier
-{
-	@Id
-	int supId;
-	
-	String supName,supDesc;
-
-	public int getSupId() {
-		return supId;
-	}
-
-	public void setSupId(int supId) {
-		this.supId = supId;
-	}
-
-	public String getSupName() {
-		return supName;
-	}
-
-	public void setSupName(String supName) {
-		this.supName = supName;
-	}
-
-	public String getSupDesc() {
-		return supDesc;
-	}
-
-	public void setSupDesc(String supDesc) {
-		this.supDesc = supDesc;
-	}
+@Component
+public class Supplier {
 	
 	
-}
+@Id
+@GeneratedValue(strategy=GenerationType.AUTO)
+int supplierId;
+
+String supplierName,supplierAddress;
+
+
+	public int getSupplierId()
+	{
+		return supplierId;
+	}
+
+	public void setSupplierId(int supplierId)
+	{
+		this.supplierId = supplierId;
+	}
+
+	public String getSupplierName()
+	{
+		return supplierName;
+	}
+
+	public void setSupplierName(String supplierName)
+	{
+		this.supplierName = supplierName;
+	}	
+
+	public String getSupplierAddress() 
+	{
+		return supplierAddress;
+	}
+
+	public void setSupplierAddress(String supplierAddress)
+	{
+		this.supplierAddress = supplierAddress;
+	}
+	}
