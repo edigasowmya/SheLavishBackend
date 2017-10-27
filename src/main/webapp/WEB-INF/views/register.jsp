@@ -42,8 +42,16 @@
                 
                 
                  <tr>
-                    <td><form:label path="address">Address</form:label></td>
+`                    <td><form:label path="address">Address</form:label></td>
                     <td><form:input path="address"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="role">Role</form:label></td>
+                    <td><form:input path="role"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="enabled">Enabled</form:label></td>
+                    <td><form:input path="enabled"/></td>
                 </tr>
                 
                 
