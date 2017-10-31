@@ -57,7 +57,7 @@
                 
                 
                 <tr>
-                    <td><input type="submit" value="Submit"/></td>
+                    <td><input type="submit" value="Add User"/></td>
                 </tr>
             </table>
         </form:form>

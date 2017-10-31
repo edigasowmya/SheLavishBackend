@@ -42,12 +42,11 @@
 					<li><a href="Home"><i class="fa fa-home" aria-hidden="true"></i>HOME</a></li>
 					<li><a href="category">Category</a></li>
 					<li><a href="supplier">Supplier</a></li>
-					<li><a href="product">PRODUCT</a></li>
+					<li><a href="product">Product</a></li>
 						
-						 <sec:authorize access="isAuthenticated()">
+				 <sec:authorize access="isAuthenticated()">
                  <li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
-              
-                  </sec:authorize>
+                 </sec:authorize>
 						
 				</ul>
 	  		</div>

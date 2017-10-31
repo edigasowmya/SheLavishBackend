@@ -12,15 +12,17 @@
 		<center><label for="User Email" class="col-xs-4 control-label">Email</label>
 		<div class="col-xs-4">
 			<input name="j_username" type="email"  placeholder=" User Email" class="form-control" />
-		</center></div>
+		</div>
+		</center>
 	</div>
 
 	<div class="form-group">
-		<center><label for="code" class="col-xs-4 control-label">Password</label><div class="col-xs-4">
+		<center><label for="code" class="col-xs-4 control-label">Password</label>
+		<div class="col-xs-4">
 			<input name="j_password"  type="password" placeholder="User Password" class="form-control" />
+		</div>
 		</center>
 		</div>
-	</div>
 
 
 

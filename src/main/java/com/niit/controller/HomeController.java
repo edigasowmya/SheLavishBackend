@@ -51,15 +51,15 @@ public class HomeController {
 	    	return "login";
 	    	
 	    }
-	  
-	    
+	   
 	  
 	  
 	  	@SuppressWarnings("unchecked")
 		@RequestMapping(value = "/login_session_attributes")
 		public String login_session_attributes(HttpSession session,Model model) {
+	  		 System.out.println("Before fetching email");
 			String email = SecurityContextHolder.getContext().getAuthentication().getName();
-			
+			 System.out.println("After fetching email");
 			User user = userDAO.get(email);
 			session.setAttribute("userid", user.getId());
 			session.setAttribute("name", user.getEmail());
@@ -73,17 +73,20 @@ public class HomeController {
 			  
 			     if (authority.getAuthority().equals(role)) 
 			     {
+			    	 System.out.println("inside user check");
 			    	 session.setAttribute("UserLoggedIn", "true");
 			    	//session.setAttribute("cartsize",cartDAO.cartsize((Integer)session.getAttribute("userid")));
 			    	 return "redirect:/";
 			     }
 			     else 
 			     {
+			    	 System.out.println("inside Admin check");
 			    	 session.setAttribute("Administrator", "true");
 			    	 model.addAttribute("product",  new Product());
 			    	 model.addAttribute("ProductPageClicked", "true");
 			    	 model.addAttribute("supplierList",supplierDao.retrieveSupplier());
 			    	 model.addAttribute("categoryList",categoryDAO.retrieveCategory());
+			    	 System.out.println("Go to Admin Page");
 				 return "/Admin";
 			     }
 		}

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.niit.dao.CartDao;
@@ -44,7 +45,7 @@ public class CartController
 				cartDAO.saveProductToCart(item);
 				attributes.addFlashAttribute("ExistingMessage",  p.getProductName() +"is already exist");
 		
-				return "redirect:/";
+				return "redirect:/cart	";
 			} else {
 				Cart item = new Cart();
 				Product p = productDao.getProduct(id);
@@ -52,11 +53,12 @@ public class CartController
 				item.setProductName(p.getProductName());
 				item.setUserId(userId);
 				item.setProductQuantity(q);
+				
 				item.setSubTotal(q * p.getPrice());
 				item.setPrice(p.getPrice());
 				cartDAO.saveProductToCart(item);
 				attributes.addFlashAttribute("SuccessMessage", "Item"+p.getProductName()+" has been deleted Successfully");
-				return "redirect:/";
+				return "redirect:/cart";
 			}
 	    	
 	    }
@@ -65,7 +67,7 @@ public class CartController
 		public String viewCart(Model model, HttpSession session) {
 	    	
 			int userId = (Integer) session.getAttribute("userid");
-			model.addAttribute("CartList", cartDAO.listCart());
+			model.addAttribute("CartList", cartDAO.listCartbyUserId(userId));
 			 if(cartDAO.cartsize((Integer) session.getAttribute("userid"))!=0){
 				
 				model.addAttribute("CartPrice", cartDAO.CartPrice((Integer) session.getAttribute("userid")));
@@ -79,5 +81,32 @@ public class CartController
 
 
 	
+	  @RequestMapping(value="removeCart/{cartId}")
+	  public String deleteorder(@PathVariable("cartId") int id, HttpSession session) {
+	  	cartDAO.removeCartById(id);
+	  	session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
+	  	return "redirect:/cart";
+	  }
+	  
+	  @RequestMapping("continue_shopping")
+	  public String continueshopping()
+	  {
+	  return "redirect:/";	
+	  
+	  }
+	  
 
+		@RequestMapping("editCart/{cartId}")
+		public String editorder(@PathVariable("cartId") int cartid, @RequestParam("quantity") int q, HttpSession session) {
+		
+			//int userId = (Integer) session.getAttribute("userid");
+			Cart cart = cartDAO.editCartById(cartid);
+			Product p = productDao.getProduct(cart.getProductId());
+			cart.setProductQuantity(q);
+			//cart.setProductPrice(q * p.getPrice());
+			cart.setSubTotal(q * p.getPrice());
+			cartDAO.saveProductToCart(cart);
+			session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
+			return "redirect:/cart";
+		}
 }

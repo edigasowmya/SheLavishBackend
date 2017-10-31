@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -20,7 +19,20 @@
   			<title>project</title>
 		
 		</head>
-		
+		<style>
+body {
+	 background: url("C:\Users\SATHISH\Downloads\Blur-3.png");
+    background-color:  #E6E6FA;
+}
+h1 {
+    background-color: #00ff00;
+}
+p {
+    background-color: rgb(255,0,255);
+}
+</style>
+</head>
+<body>
 		
 
 	<body>
@@ -67,7 +79,7 @@
     <div class="container">
         <div class="row product">
             <div class="col-md-5 col-md-offset-0">
-            <img src="/medical/myImage/imageDisplay?id=${product.productId}" alt="" width="300" height="200" /></div>
+            <img src="/SheLavishFront/myImage/imageDisplay?id=${product.productId}" alt="" width="300" height="200" /></div>
             <div class="col-md-7">
                 <div class="table-responsive">
                     <table class="table">

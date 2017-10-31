@@ -27,7 +27,7 @@ public class IndexController
 	public String showIndex(Model model) 
 	{
 		model.addAttribute("pList",productDao.retrieveProduct());
-		return "Welcome";
+		return "welcome";
 
 	}
 
@@ -49,7 +49,7 @@ public class IndexController
 		user.setRole("ROLE_USER");
 		user.setEnabled(true);
 		userDAO.saveUser(user);
-		return "Welcome";
+		return "welcome";
 	}
 
 
