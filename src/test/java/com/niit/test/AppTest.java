@@ -1,4 +1,4 @@
-package com.niit.test;
+/*package com.niit.test;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
@@ -48,3 +48,4 @@ public void saveUser()
 
 
 }
+*/

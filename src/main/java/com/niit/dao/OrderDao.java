@@ -1,4 +1,4 @@
-package com.niit.dao;
+/*package com.niit.dao;
 
 import java.util.List;
 
@@ -16,3 +16,4 @@ public interface OrderDao {
 	
 	public List<Order> getAllOrdersOfUser(int userId);
 }
+*/

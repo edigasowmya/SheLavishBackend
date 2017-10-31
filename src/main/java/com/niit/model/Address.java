@@ -1,5 +1,5 @@
 
-package com.niit.model;
+/*package com.niit.model;
 
 import java.sql.Timestamp;
 
@@ -180,3 +180,4 @@ public class Address {
 		
 		
 }
+*/

@@ -1,6 +1,6 @@
-package com.niit.daoimpl;
+/*package com.niit.daoimpl;
 
-/*package com.niit.DaoIMPL;
+package com.niit.DaoIMPL;
 
 import java.util.List;
 

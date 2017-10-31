@@ -12,9 +12,10 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-
+import com.niit.dao.CartDao;
 import com.niit.dao.UserDao;
 import com.niit.dao.UserDao;
+import com.niit.daoimpl.CartDaoImpl;
 import com.niit.daoimpl.UserDaoImpl;
 import com.niit.daoimpl.UserDaoImpl;
 
@@ -77,6 +78,13 @@ public class DBconfig
 		return new UserDaoImpl(sessionFactory);
 	}
 	
+	@Autowired
+	@Bean(name = "cartDAO")
+	public CartDao getCartDAO(SessionFactory sessionFactory)
+	{
+
+		return new CartDaoImpl(sessionFactory);
+	}
 	
 
 	}
