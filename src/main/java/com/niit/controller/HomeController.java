@@ -10,6 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.dao.CategoryDao;
@@ -70,6 +71,7 @@ public class HomeController {
 			String role="ROLE_USER";
 			for (GrantedAuthority authority : authorities) 
 			{
+				session.setAttribute("user", user);
 			  
 			     if (authority.getAuthority().equals(role)) 
 			     {
@@ -96,7 +98,8 @@ public class HomeController {
 		}
 	    
 	    
-	    
+	  
+	  
 	  
 	  
 	  

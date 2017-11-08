@@ -34,7 +34,7 @@ public class ImageController {
 		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
 		response.getOutputStream().write(item.getImage());
 		
-		System.out.println("Image is");
+		System.out.println("Image is"+item.getImage());
 	
 		response.getOutputStream().close();
 }}

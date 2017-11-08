@@ -7,8 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>product</title>
 </head>
-<body>
-		
+
+
+
+
+
+
+		<body style="background:url(http://files.customize.org/thumbnails/larger/61440.jpg);  background-size:100% 100%;">
+
+  
 		<form:form action="InsertProduct" modelAttribute="product" enctype="multipart/form-data">
 		<table align="center">
 		
@@ -114,6 +121,15 @@
 				</td>
 			</tr>
 		</c:forEach></table>
+         
+         
+         
 
+
+
+
+         
+         
+         
 	</body>
 </html>

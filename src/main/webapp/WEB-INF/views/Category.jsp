@@ -8,7 +8,14 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 			<title>Category</title>
 		</head>
-	<body>
+		
+		
+		<jsp:include page="header.jsp"></jsp:include>
+		
+		
+		<body style="background:url(http://files.customize.org/thumbnails/larger/61440.jpg);  background-size:100% 100%;">
+		
+	
 	
 			<!-- <form action="AddCategory" method="post">-->
 	

@@ -87,20 +87,14 @@ public class CartController
 	  	session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
 	  	return "redirect:/cart";
 	  }
-	  
-	  @RequestMapping("continue_shopping")
-	  public String continueshopping()
-	  {
-	  return "redirect:/";	
-	  
-	  }
+	 
 	  
 
 		@RequestMapping("editCart/{cartId}")
 		public String editorder(@PathVariable("cartId") int cartid, @RequestParam("quantity") int q, HttpSession session) {
 		
 			//int userId = (Integer) session.getAttribute("userid");
-			Cart cart = cartDAO.editCartById(cartid);
+			Cart cart = cartDAO.getCartById(cartid);
 			Product p = productDao.getProduct(cart.getProductId());
 			cart.setProductQuantity(q);
 			//cart.setProductPrice(q * p.getPrice());

@@ -8,7 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>supplier</title>
 </head>
-	<body>
+</head>
+<jsp:include page="header.jsp" />
+
+  
+	
+		<body style="background:url(http://files.customize.org/thumbnails/larger/61440.jpg);  background-size:100% 100%;">
+
 			<!-- <form action="AddSupplier" method="post">-->
 
 			<form:form action="AddSupplier" modelAttribute="supplier">

@@ -18,7 +18,8 @@
     }
 </style>
 </head>
-<body>
+
+<BODY>
 <div class="bs-example">
     <nav id="myNavbar" class="navbar navbar-inverse" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">SHE LAVISH</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -47,10 +48,9 @@
                             <li><a href="#">Trash</a></li>
                
                         </ul>
-                    </li>
-                    <li><a href="cart">Cart</a></li>
+                   
+                </li>
                 </ul>
-                
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
@@ -72,7 +72,6 @@
                 
                  <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
-                    <li><a href="viewcart">Cart</a></li>
                </ul> 
             </div>
         </div>
@@ -92,17 +91,17 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img class="img-rounded" class="img-responsive center-block"
-      src=C:\Users\SATHISH\Downloads\123.png style="width:100%" "height="50%">
+      <img class="img-responsive center-block"
+      src="resources/image33.jpg" >
     </div>
     <div class="item">
-    <img class="img-rounded" class="img-responsive center-block"
-      src=C:\Users\SATHISH\Downloads\10788252_l.png style="width:100%" "height="50%">
+    <img class="img-responsive center-block"
+      src="resources/image34.jpg">
     </div>
 
     <div class="item">
     <img class="img-rounded" class="img-responsive center-block"
-      src=C:\Users\SATHISH\Downloads\Online-Grocery-Shopping-In-Karachi_1.jpg style="width:100%" "height="50%">
+      src="resources/image35.jpg">
     </div>
  
   </div>
@@ -116,6 +115,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+</div>
 </body>
 </br>
 </br>
@@ -125,6 +125,6 @@
 </br>
 </br>
 </br> 
-<%-- 	<jsp:include page="footer.jsp" />  --%>
+ 	<jsp:include page="Footer.jsp" />  
 </html>   
 

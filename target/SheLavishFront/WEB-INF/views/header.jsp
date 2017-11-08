@@ -11,18 +11,118 @@
 <html>
 
 		<head>
-  			<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  			<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   			
-  			<title>project</title>
+  			<title></title>
 		</head>
+		
+<style>
 
-	<body>
-	  
-	  	<nav id ="navbar-red" class="navbar-inverse"role="navigation">
+
+
+
+/*
+ * Amin Bootstrap - Full Slider
+ * Copyright 2017 Amin Bootstrap
+ */
+
+html,
+body {
+    height: 100%;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+ol.carousel-indicators li{
+    width: 100px;
+    height: 100px;
+    border-color: transparent;
+}
+
+ol.carousel-indicators li.active{
+    width: 100px;
+    height: 100px;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+ol.carousel-indicators li div{
+    border-radius: 50%;
+    background: rgba(0,0,0,0.8);
+}
+
+ol.carousel-indicators li.active div{
+    border-radius: 50%;
+    background: rgba(255,255,255,0.8);
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#image1 {
+    background-image:url('H:\sowmya\ProjectPRODUCTImages\image2.jpg');
+}
+
+#image2 {
+    background-image:url('H:\sowmya\ProjectPRODUCTImages\image3.jpg');
+}
+
+#image3 {
+    background-image:url('H:\sowmya\ProjectPRODUCTImages\image4.jpg');
+}
+
+#item1 {
+    background-image:url('H:\sowmya\ProjectPRODUCTImages\image2.jpg\hover-pag-2.png');
+}
+
+#item2 {
+    background-image:url('H:\sowmya\ProjectPRODUCTImages\image3.jpg\hover-pag-3.png');
+}
+
+#item3 {
+    background-image:url('H:\sowmya\ProjectPRODUCTImages\image4.jpg\hover-pag-4.png');
+}
+
+
+
+
+
+</style>		
+		
+	<script>
+	
+	$('.carousel').carousel({
+	    interval: 3000 //changes the speed
+	})
+	</script>	
+	
+		
+<body>
+<nav id ="navbar-red" class="navbar navbar-inverse"role="navigation">
 			
 			<div class="container-fluid">
 				<ul="nav navbar-nav">
@@ -37,19 +137,26 @@
 		
 			<div class="collapse navbar-collapse"id=bs-example-nav>
 			
-				<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav navbar-right">
 			
-					<li><a href="Home"><i class="fa fa-home" aria-hidden="true"></i>HOME</a></li>
-					<li><a href="category">Category</a></li>
-					<li><a href="supplier">Supplier</a></li>
-					<li><a href="product">Product</a></li>
-						
-				 <sec:authorize access="isAuthenticated()">
-                 <li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
-                 </sec:authorize>
-						
+			
+				 <sec:authorize access="!isAuthenticated()">
+				      <!--   <h2 class="form-signin-heading">Please sign in</h2> -->
+                    <li role="presentation"><a href="login">Login </a></li>
+                    <li role="presentation"><a href="registration">Register </a></li>
+                     </sec:authorize>
+                    <sec:authorize access="isAuthenticated()">
+                
+                 <li><span class="fa fa-sign-out" aria-hidden="true"></span><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
+                 
+                 <li><i  role="presentation" class="fa fa-shopping-cart" aria-hidden="true"></i><a href="cart">Cart</a></li>
+                  </sec:authorize>
+	
 				</ul>
 	  		</div>
 	  	</nav>
-	</body>
+	  	
+	  	
+	  	
+</body>
 </html>

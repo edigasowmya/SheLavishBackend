@@ -23,7 +23,9 @@
 <%-- <jsp:include page="showProduct.jsp" /> --%> 
 
 </head>
-<body>
+
+<body style = "background:url(https://wallpapercave.com/wp/BUhfbby.jpg);  background-size:100% 100%;">
+
 <div class="bs-example">
     <nav id="myNavbar" class="navbar navbar-inverse" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">shoes</a>
+                <a class="navbar-brand" href="#">WOMENS FASHION</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -71,7 +73,7 @@
                      
                         <td class="col-sm-8 col-md-6">
                         <div class="thumbnail">
-                         <a class="thumbnail pull-left" href="#"> <img src="/medical/myImage/imageDisplay?id=${cart.productId}" style="height:50px;height: 50px" > </a> 
+                         <a class="thumbnail pull-left" href="#"> <img src="/SheLavishFront/myImage/imageDisplay?id=${cart.productId}" style="height:50px;height: 50px" > </a> 
                             <div class="media-body">
                                 <h4 class="media-heading"><a href="#">${cart.productName}</a></h4>
                                 <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
