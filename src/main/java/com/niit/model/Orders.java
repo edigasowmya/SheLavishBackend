@@ -1,7 +1,7 @@
-
-/*package com.niit.model;
+package com.niit.model;
 
 import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,8 +15,7 @@ import org.springframework.stereotype.Component;
 public class Orders {
 
 	@Id
-	@GeneratedValue
-	private int id;
+	private String orderId;
 	
 	private int userId;
 	
@@ -26,8 +25,14 @@ public class Orders {
 	
 	private String orderStatus;
 	
-	private String paymentMethod;
+	private int paymentId;
 	
+	private int productId;
+	
+	private int price;
+	
+	private int productQuantity;
+		
 	private Timestamp createdTimestamp;
 	
 	private String createdBy;
@@ -35,13 +40,14 @@ public class Orders {
 	private Timestamp updatedTimestamp;
 	
 	private String updatedBy;
-
-	public int getId() {
-		return id;
+	
+	
+	public String getOrderId() {
+		return orderId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public int getUserId() {
@@ -76,12 +82,12 @@ public class Orders {
 		this.orderStatus = orderStatus;
 	}
 
-	public String getPaymentMethod() {
-		return paymentMethod;
+	public int getPaymentId() {
+		return paymentId;
 	}
 
-	public void setPaymentMethod(String paymentMethod) {
-		this.paymentMethod = paymentMethod;
+	public void setPaymentId(int paymentId) {
+		this.paymentId = paymentId;
 	}
 
 	public Timestamp getCreatedTimestamp() {
@@ -115,7 +121,30 @@ public class Orders {
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-		
+
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getProductQuantity() {
+		return productQuantity;
+	}
+
+	public void setProductQuantity(int productQuantity) {
+		this.productQuantity = productQuantity;
+	}
+	
 	
 }
-*/

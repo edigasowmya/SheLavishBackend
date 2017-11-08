@@ -70,7 +70,7 @@ public class UserDaoImpl implements UserDao
 	}
 }
 
-	/*@Transactional
+/*	@Transactional
 	public User get(String email) {
 		
 		Criteria c = sessionFactory.getCurrentSession().createCriteria(User.class);
@@ -83,7 +83,7 @@ public class UserDaoImpl implements UserDao
 			return listUser.get(0);
 		} else {
 			return null;
-		}
-	}*/
+		}*/
+	
 
 

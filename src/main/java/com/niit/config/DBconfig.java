@@ -12,9 +12,12 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.dao.AddressDAO;
 import com.niit.dao.CartDao;
 import com.niit.dao.UserDao;
 import com.niit.dao.UserDao;
+
+import com.niit.daoimpl.AddressDaoImpl;
 import com.niit.daoimpl.CartDaoImpl;
 import com.niit.daoimpl.UserDaoImpl;
 import com.niit.daoimpl.UserDaoImpl;
@@ -44,7 +47,7 @@ public class DBconfig
 			Properties properties = new Properties();
 			properties.put("hibernate.show_sql", "true");
 			properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-		//	properties.put("hibernate.hbm2ddl.auto", "create");
+		//properties.put("hibernate.hbm2ddl.auto", "create");
 			properties.put("hibernate.hbm2ddl.auto", "update");
 			System.out.println("Hibernate Properties");
 			return properties;
@@ -84,6 +87,14 @@ public class DBconfig
 	{
 
 		return new CartDaoImpl(sessionFactory);
+	}
+	
+	@Autowired
+	@Bean(name = "addressDAO")
+	public AddressDAO getAddressDAO(SessionFactory sessionFactory)
+	{
+
+		return new AddressDaoImpl(sessionFactory);
 	}
 	
 

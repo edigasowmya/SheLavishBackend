@@ -105,7 +105,7 @@ public class ProductDaoImpl implements ProductDao
 	public Product getItem(int id) {
 		Product product=sessionFactory.getCurrentSession().get(Product.class, id);
 
-		return null;
+		return product;
 	}
 	
 	

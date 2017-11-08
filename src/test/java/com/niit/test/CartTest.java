@@ -18,7 +18,6 @@ import com.niit.model.Cart;
 import com.niit.model.Category;
 
 
-@Ignore
 public class CartTest {
 	
 	@Autowired
@@ -34,28 +33,29 @@ public class CartTest {
 	public static void initialize(){
 		
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.scan("com.yourstyle.*");
+		context.scan("com.niit");
 		context.refresh();
 		
 		cart = (Cart) context.getBean("cart");
 		
-		cartDao = (CartDao) context.getBean("cartDao");
+		cartDao = (CartDao) context.getBean("cartDAO");
 		
 		productDao = (ProductDao) context.getBean("productDao");
 	}
 	
-	@Ignore
+	
 	@Test
 	public void addToCartTest(){
 		
 		cart.setProductId(101);
-		cart.setQuantityAdded(2);
-		cart.setStatus("ACTIVE");
-		cart.setUserId(546);
-		cart.setSubTotal(2 * productDao.getProductById(101).getPrice());
+		cart.setProductQuantity(2);
+		cart.setProductId(44);
+		cart.setProductName("All Western Wear");
+		cart.setUserId(2);;
+		cart.setSubTotal(2 * productDao.getProduct(44).getPrice());
 		cart.setCreatedBy("SYSTEM");
 		cart.setCreatedTimestamp(new Timestamp(System.currentTimeMillis()));
-		assertTrue("Problem in saving to cart",cartDao.saveOrUpdate(cart));
+		assertTrue("Problem in saving to cart",cartDao.saveProductToCart(cart));
 	}
 	
 	@Ignore

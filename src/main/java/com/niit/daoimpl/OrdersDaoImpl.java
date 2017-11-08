@@ -1,9 +1,8 @@
-/*package com.niit.daoimpl;
-package com.niit.DaoIMPL;
+package com.niit.daoimpl;
 
 import java.util.List;
 
-import javax.persistence.criteria.Order;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -13,14 +12,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.niit.DAO.OrderDao;
-import com.niit.model.Cart;
+import com.niit.dao.OrdersDAO;
 import com.niit.model.Orders;
 
-@Repository("orderDao")
-public class OrderDaoImpl implements OrderDao {
 
-	private static Logger log = LoggerFactory.getLogger(OrderDaoImpl.class);
+@Repository("orderDAO")
+public class OrdersDaoImpl implements OrdersDAO {
+
+	private static Logger log = LoggerFactory.getLogger(OrdersDaoImpl.class);
 	
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -28,7 +27,6 @@ public class OrderDaoImpl implements OrderDao {
 	
 	
 	@Transactional
-	@Override
 	public boolean saveOrUpdate(Orders order) {
 		try{
 			sessionFactory.getCurrentSession().saveOrUpdate(order);
@@ -40,15 +38,13 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	@Transactional
-	@Override
 	public Orders getOrderById(int orderId) {
-		Cart cart= (Cart) sessionFactory.getCurrentSession().createQuery("from Order where id = :orderId")
+		Orders order= (Orders) sessionFactory.getCurrentSession().createQuery("from Order where id = :orderId")
 				.setParameter("orderId", orderId).uniqueResult();
-		return null;
+		return order;
 	}
 
 	@Transactional
-	@Override
 	public boolean deleteOrderById(int orderId) {
 		try{
 			
@@ -67,25 +63,14 @@ public class OrderDaoImpl implements OrderDao {
 			return false;
 		}
 	}
+	
 
-	@Override
+	@Transactional
 	public List<Orders> getAllOrdersOfUser(int userId) {
 		
-		List<Orders> orderList=  sessionFactory.getCurrentSession().createQuery("from Order where userId = :userId",Orders.class).setParameter("userId", userId).list();
+		List<Orders> orderList =  sessionFactory.getCurrentSession().createQuery("from Orders where userId = :userId and orderStatus = 'PROCESSED'",Orders.class).setParameter("userId", userId).list();
 		return orderList;
 	}
 
-	@Override
-	public boolean saveOrUpdate(Order order) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public Order getOrderById(int orderId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }
-*/

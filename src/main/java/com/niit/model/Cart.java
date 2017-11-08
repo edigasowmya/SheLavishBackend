@@ -1,18 +1,43 @@
 package com.niit.model;
 
+import java.io.Serializable;
+import java.sql.Timestamp;
+
 import javax.persistence.*;
+
+import org.springframework.stereotype.Component;
 
 
 @Entity
-public class Cart 
+@Table
+@Component
+public class Cart implements Serializable
 {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 	
 	@GeneratedValue
 	@Id
 	int cartId;
-	private int productId,userId,price,productQuantity;
+	private int productId;
+	private int userId;
 	private double subTotal;
+	private int price;
+	private int productQuantity;
+	
+	private Timestamp createdTimestamp;
+	
+	private String createdBy;
+	
+	private Timestamp updatedTimestamp;
+	
+	private String updatedBy;
+	
 	
 	public int getCartId() {
 		return cartId;
@@ -29,9 +54,15 @@ public class Cart
 	public int getUserId() {
 		return userId;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	
+	
+	
 	public double getSubTotal() {
 		return subTotal;
 	}
@@ -58,7 +89,31 @@ public class Cart
 	}
 	String productName;
 
-	
-	
-	
+
+	public Timestamp getCreatedTimestamp() {
+		return createdTimestamp;
+	}
+	public void setCreatedTimestamp(Timestamp createdTimestamp) {
+		this.createdTimestamp = createdTimestamp;
+	}
+	public String getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+	public Timestamp getUpdatedTimestamp() {
+		return updatedTimestamp;
+	}
+	public void setUpdatedTimestamp(Timestamp updatedTimestamp) {
+		this.updatedTimestamp = updatedTimestamp;
+	}
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+		
 }

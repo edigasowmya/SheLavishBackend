@@ -8,11 +8,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.CartDao;
 import com.niit.model.Cart;
 
+@Repository
 public class CartDaoImpl implements CartDao
 {
 
@@ -73,12 +75,14 @@ public class CartDaoImpl implements CartDao
 	@Transactional
 	public boolean removeCartById(int cart_id)
 {
-	 Object persistentInstance =sessionFactory.getCurrentSession().load(Cart.class, cart_id);
-	    if (persistentInstance != null) {
-	    	sessionFactory.getCurrentSession().delete(persistentInstance);
-	        return true;
-	    }
-	    return false;
+	 
+	Cart c=new Cart();
+	c.setCartId(cart_id);
+	sessionFactory.getCurrentSession().delete(c);
+		
+		
+		return true;
+		
 	}
 
 
@@ -105,12 +109,13 @@ public class CartDaoImpl implements CartDao
 
 
 	@Transactional
-	public Cart editCartById(int cart_id) {
+	public Cart editCartById1(int cart_id) {
 	
 		Cart cart=	sessionFactory.getCurrentSession().get(Cart.class,cart_id);
 	
 	return cart;
 }
+
 
 
 
@@ -158,9 +163,15 @@ public class CartDaoImpl implements CartDao
 	c.add(Restrictions.eq("userId", userId));
 	//c.add(Restrictions.eq("status","C"));
 	c.setProjection(Projections.sum("subTotal"));
-	double l=  (Double) c.uniqueResult();
+	double l= (Double) c.uniqueResult();
 	return l;
 	}
 
 
-}
+
+	/*public Cart editCartById(int cart_id) {
+		// TODO Auto-generated method stub
+		return null;*/
+	}
+
+
